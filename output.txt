@@ -1,0 +1,27 @@
+=== Starting Chat Application Driver ===
+
+--- 1. Sending Messages ---
+[Bob received message]: "Hello Bob and Charlie!" from Alice
+[Charlie received message]: "Hello Bob and Charlie!" from Alice
+[Alice received message]: "Hi Alice, got your message." from Bob
+
+--- 2. Demonstrating Memento (Undo Last Message) ---
+[Alice received message]: "This is a secret message I want to take back." from Charlie
+Charlie's last message before undo: This is a secret message I want to take back.
+[Charlie] Undid last sent message: "This is a secret message I want to take back."
+Charlie's last message after undo: None
+
+--- 3. Demonstrating Mediator (Blocking Users) ---
+[Server] Bob has blocked Charlie
+[Server] Message from Charlie to Bob was blocked.
+[Server] Bob has unblocked Charlie
+[Bob received message]: "Hey Bob, can you read this now?" from Charlie
+
+--- 4. Demonstrating Iterator by User ---
+[Bob received message]: "How are you doing Bob?" from Alice
+Iterating over Alice's chat history with Bob:
+ - [From: Alice]: Hello Bob and Charlie!
+ - [From: Bob]: Hi Alice, got your message.
+ - [From: Alice]: How are you doing Bob?
+
+=== Chat Application Driver Finished ===
